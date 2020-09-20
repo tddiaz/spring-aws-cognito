@@ -1,0 +1,9 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://cognito-idp.us-east-2.amazonaws.com/us-east-2_pOEeJ29pX
+          jwk-set-uri: https://cognito-idp.us-east-2.amazonaws.com/us-east-2_pOEeJ29pX/.well-known/jwks.json
+server:
+  port: 8081
