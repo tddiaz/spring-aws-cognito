@@ -1,7 +1,7 @@
-aws:
-  accessKey: AKIASEWHHNQ76XPFCVNO
-  secretKey: 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
-  region: us-east-2
+#aws:
+#  accessKey: AKIASEWHHNQ76XPFCVNO
+#  secretKey: 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
+#  region: us-east-2
 
 cognito:
   user-pool-id: us-east-2_pOEeJ29pX
