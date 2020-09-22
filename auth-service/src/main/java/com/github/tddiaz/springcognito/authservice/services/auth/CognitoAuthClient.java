@@ -1,4 +1,4 @@
-package com.github.tddiaz.springcognito.authservice.services;
+package com.github.tddiaz.springcognito.authservice.services.auth;
 
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
 import com.amazonaws.services.cognitoidp.model.*;
