@@ -2,6 +2,7 @@ package com.github.tddiaz.springcognito.authservice.services;
 
 import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
 import com.amazonaws.services.cognitoidp.model.*;
+import com.github.tddiaz.springcognito.authservice.dtos.ChangePassRequest;
 import com.github.tddiaz.springcognito.authservice.dtos.LoginRequest;
 import com.github.tddiaz.springcognito.authservice.dtos.SignUpRequest;
 import lombok.RequiredArgsConstructor;
@@ -77,6 +78,17 @@ public class CognitoAuthClient {
         AdminInitiateAuthResult adminInitiateAuthResult = cognitoProviderClient.adminInitiateAuth(authRequest);
 
         return adminInitiateAuthResult.getAuthenticationResult();
+    }
+
+    public void logout(String accessToken) {
+        cognitoProviderClient.globalSignOut(new GlobalSignOutRequest().withAccessToken(accessToken));
+    }
+
+    public void changePassword(ChangePassRequest changePass, String accessToken) {
+        cognitoProviderClient.changePassword(new ChangePasswordRequest()
+                .withAccessToken(accessToken)
+                .withPreviousPassword(changePass.getOldPassword())
+                .withProposedPassword(changePass.getNewPassword()));
     }
 
 }
